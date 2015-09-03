@@ -436,6 +436,11 @@
             if ([FBDialogs canPresentShareDialogWithParams:fbparams]) {
                 // Present the share dialog
                 [FBDialogs presentShareDialogWithLink:fbparams.link
+                                                 name:fbparams.name
+                                              caption:fbparams.caption
+                                          description:fbparams.linkDescription
+                                              picture:fbparams.picture
+                                          clientState:nil
                                               handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
                                                   CDVPluginResult *pluginResult = nil;
                                                   if ([[results objectForKey:@"completionGesture"] isEqualToString:@"cancel"]) {
